@@ -33,3 +33,10 @@ const ans2 = fun2 <number, string> (20, 'Helloe')
 ans2.n
 
 
+//advance generics example
+
+const ans3 = <T>(arr: T[], property: string, value: number | string): T[]=>{
+    return arr;
+}
+ 
+ans3(['a','b','c'], "apple", 10 )
