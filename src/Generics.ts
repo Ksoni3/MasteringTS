@@ -40,3 +40,35 @@ const ans3 = <T>(arr: T[], property: string, value: number | string): T[]=>{
 }
  
 ans3(['a','b','c'], "apple", 10 )
+
+
+// A generic function that takes an array and returns the first element
+function getFirstElement<T>(arr: T[]): T | undefined {
+    if (arr.length === 0) {
+      return undefined;
+    }
+    return arr[0];
+  }
+  
+  // Using the generic function with different types of arrays
+  const stringArray: string[] = ["apple", "banana", "cherry"];
+  const numberArray: number[] = [1, 2, 3, 4, 5];
+  
+  const firstString: string | undefined = getFirstElement(stringArray);
+  const firstNumber: number | undefined = getFirstElement(numberArray);
+  
+  console.log(firstString); // "apple"
+  console.log(firstNumber); // 1
+  
+  // A generic function that reverses the order of elements in an array
+  function reverseArray<T>(arr: T[]): T[] {
+    return arr.reverse();
+  }
+  
+  // Using the generic function with different types of arrays
+  const reversedStringArray: string[] = reverseArray(stringArray);
+  const reversedNumberArray: number[] = reverseArray(numberArray);
+  
+  console.log(reversedStringArray); // ["cherry", "banana", "apple"]
+  console.log(reversedNumberArray); // [5, 4, 3, 2, 1]
+  
