@@ -72,3 +72,19 @@ function getFirstElement<T>(arr: T[]): T | undefined {
   console.log(reversedStringArray); // ["cherry", "banana", "apple"]
   console.log(reversedNumberArray); // [5, 4, 3, 2, 1]
   
+
+  // A generic function that swaps the values of two variables
+function swap<T>(a: T, b: T): [T, T] {
+    return [b, a];
+  }
+  
+  // Using the generic function
+  const result = swap("hello", "world"); // inferred type: [string, string]
+  
+  console.log(result); // ["world", "hello"]
+  
+  // Another example with numbers
+  const numberResult = swap(10, 20); // inferred type: [number, number]
+  
+  console.log(numberResult); // [20, 10]
+  
